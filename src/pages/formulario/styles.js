@@ -92,6 +92,11 @@ text: {
       color: "#ffffff",
   },
 
+  logo:{
+    width: 200,
+    height: 100,
+  },
+
   });
 
   export default styles;

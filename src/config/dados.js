@@ -82,7 +82,7 @@ export default async function getAndSend() {
 
   const anon = JSON.parse(await AsyncStorage.getItem("anon"));
   if (anon == "Não") {
-    dados[14] = "Autor: " + JSON.parse(await AsyncStorage.getItem("mail"));
+    dados[14] = "Autor: " + JSON.parse(await AsyncStorage.getItem("email"));
   } else {
     dados[14] = "Autor: Anônimo";
   }

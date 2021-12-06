@@ -6,6 +6,7 @@ import MaterialButtonPink from "../../public/components/MaterialButtonPink";
 import MaterialIconTextbox from "../../public/components/MaterialIconTextbox";
 import MaterialIconTextbox1 from "../../public/components/MaterialIconTextbox1";
 import styles from "./style.js"
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Login({ navigation }) {
 
@@ -13,7 +14,7 @@ export default function Login({ navigation }) {
   const [password, setPassword] = useState("");
   const [errorLogin, setErrorLogin] = useState("");
 
-  const LoginFirebase = () => {
+  const LoginFirebase = async () => {
     firebase.auth().signInWithEmailAndPassword(email, password).then((userCredential) => {
       let user = userCredential.user;
       navigation.navigate("Sobre")
@@ -24,6 +25,14 @@ export default function Login({ navigation }) {
         let errorMessage = error.message;
       });
   }
+
+  const data = async (mail) => {
+    try {
+      await AsyncStorage.setItem("email", JSON.stringify(mail));
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged(function (user) {
@@ -85,7 +94,7 @@ export default function Login({ navigation }) {
         :
         <TouchableOpacity
           style={styles.buttonLogin}
-          onPress={LoginFirebase}
+          onPress={() => (LoginFirebase(), data(email))}
         >
           <Text style={styles.textButtomLogin}>Login</Text>
         </TouchableOpacity>

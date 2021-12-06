@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View, ImageBackground, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, View, ImageBackground, Text, TouchableOpacity, Image } from "react-native";
 import MaterialButtonTransparentHamburger from "../../public/components/MaterialButtonTransparentHamburger";
 import styles from "./style.js"
 
@@ -8,17 +8,17 @@ function sobre({navigation}) {
     <View style={styles.container}>
       <View style={styles.navbar}>
         <View style={styles.backNavbar}>
-          
-          <MaterialButtonTransparentHamburger
-            style={styles.bTNicon}
-          ></MaterialButtonTransparentHamburger>
+          <Image
+          source={require("../../../assets/assets/images/logo_branco.png")}
+          resizeMode="contain"
+          style={styles.imgLogo}
+          ></Image>
         </View>
       </View>
       <View style={styles.card1}>
         <View style={styles.cardImage1Stack}>
           <ImageBackground
             source={require("../../../assets/assets/images/img1.jpg")}
-            resizeMode="contain"
             style={styles.cardImage1}
             imageStyle={styles.cardImage1_imageStyle}
           >
@@ -38,7 +38,6 @@ function sobre({navigation}) {
         <View style={styles.cardImage2Stack}>
           <ImageBackground
             source={require("../../../assets/assets/images/img2.jpg")}
-            resizeMode="contain"
             style={styles.cardImage2}
             imageStyle={styles.cardImage2_imageStyle}
           >
@@ -56,7 +55,6 @@ function sobre({navigation}) {
         <View style={styles.cardImage3Stack}>
           <ImageBackground
             source={require("../../../assets/assets/images/img4.jpg")}
-            resizeMode="contain"
             style={styles.cardImage3}
             imageStyle={styles.cardImage3_imageStyle}
           >

@@ -148,6 +148,16 @@ const styles = StyleSheet.create({
         color: "#ffffff",
         fontSize:18,
     },
+
+    imgLogo:{
+        width: 200,
+        height: 100,
+        overflow: "hidden",
+        marginLeft: 95,
+        marginTop:14,
+    }
+
+    
 });
 
 export default styles

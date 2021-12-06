@@ -18,6 +18,9 @@ import pg10 from "./src/pages/formulario/index10"
 import pg11 from "./src/pages/formulario/index11"
 import pg12 from "./src/pages/formulario/index12"
 import pg13 from "./src/pages/formulario/index13"
+import Anonimo from "./src/pages/formulario/anonymous"
+import Final from "./src/pages/formulario/index"
+
 
 const Stack = createStackNavigator()
 
@@ -155,6 +158,26 @@ export default function App() {
             headerShown: false,
           }}
         /> 
+
+        <Stack.Screen 
+          name="Anonimo"
+          component={Anonimo}
+          options={{
+            headerShown: false,
+          }}
+        /> 
+
+        <Stack.Screen 
+          name="Final"
+          component={Final}
+          options={{
+            headerShown: false,
+          }}
+        /> 
+ 
+ 
+ 
+ 
       </Stack.Navigator>
     </NavigationContainer>
   )

@@ -135,16 +135,13 @@ function Pg1({navigation}) {
           </View>
         ) : null}
 
-        <MaterialButtonTransparentHamburger
-            style={styles.bTNicon2}
-            onPress={() => navigation.push("Sobre")}
-        ></MaterialButtonTransparentHamburger>
-        {/* <TouchableOpacity
+        
+        <TouchableOpacity
           style={Styles.buttonVol}
           onPress={() => navigation.push("Sobre")}
           >
-          <Text style={Styles.textButtomVol}>Voltar</Text>
-        </TouchableOpacity> */}
+          <Text style={Styles.textButtomVol}>Home</Text>
+        </TouchableOpacity>
 
         {satisfacao === "" ||
         importancia === "" ||

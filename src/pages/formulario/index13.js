@@ -1,5 +1,4 @@
 import firebase from "../../config/dados"
-import * as Dados from "../../config/dados"
 import React, { Component } from "react";
 import { StyleSheet, View, Text, TouchableOpacity,TextInput } from "react-native";
 import { RadioButton } from "react-native-paper";
@@ -21,9 +20,7 @@ function Pg13({navigation}) {
       console.log(error);
     }
   };
-  
-  // enviando dados para o firebase
-  
+    
 
   return (
     <View style={Styles.container}>
@@ -148,14 +145,14 @@ function Pg13({navigation}) {
           <TouchableOpacity
             disabled={true} 
             style={Styles.buttonProx}
-            onPress={() => (navigation.navigate("final"), data(importancia, satisfacao, feedback))}
+            onPress={() => (navigation.navigate("Anonimo"), data(importancia, satisfacao, feedback))}
             >
             <Text style={Styles.textButtomProx}>Proximo</Text>
           </TouchableOpacity>
         ) : (
         <TouchableOpacity
           style={Styles.buttonProx}
-          onPress={() => (navigation.navigate("final"), data(importancia, satisfacao, feedback), Dados.default())} 
+          onPress={() => (navigation.navigate("Anonimo"), data(importancia, satisfacao, feedback))} 
           >
           <Text style={Styles.textButtomProx}>Proximo</Text>
         </TouchableOpacity>
